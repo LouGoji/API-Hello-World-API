@@ -4,6 +4,7 @@ const Language = require('../models/language.js')
 
 module.exports = languages
 
+
 // Seed:
 languages.get('/seed', (req, res) => {
     Language.insertMany([
@@ -52,7 +53,7 @@ languages.get('/', (req, res) => {
 
 // Show:
 languages.get('/:name', (req, res) => {
-    Language.findOne({ name: req.params.name.toLowerCase() })
+    Language.findOne({ name: req.params.name .toLowerCase() })
         .then(foundLanguage => {
             res.json(foundLanguage)
         })
